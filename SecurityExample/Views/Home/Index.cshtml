@@ -1,0 +1,25 @@
+﻿@{
+                /**/
+
+                ViewBag.Title = "Home Page";
+}
+@if (Request.IsAuthenticated)
+{
+<div class="jumbotron">
+    <h1>Congratulations!</h1>
+    <h3>You are successfully registered, Human!</h3>
+    @*<a href="~/Views/Manage/GIFS.cshtml"><img src="~/Content/youdidit.gif" /></a>*@
+    @*@Html.ActionLink("<img src='~/Content/youdidit.gif>'", "GIFS", "Manage")*@
+    <a href='@Url.Action("GIFS", "Manage")'>
+        <img src='@Url.Content("~/Content/youdidit.gif")' />
+    </a>
+</div>
+}
+else
+{
+    <div class="jumbotron">
+        <h1>Welcome to this thing, user!</h1>
+        <img src="~/Content/welcome.jpg" />
+    </div>
+}
+    
